@@ -28,12 +28,12 @@ void valCoderTick(int pin1, int pin2)
 }
 
 void up()
-{
-   valCoderTick(valcoderUp, valcoderDown);
+{   
+   valCoderTick(valcoderDown, valcoderUp);
 }
 void down()
 {
-   valCoderTick(valcoderDown, valcoderUp);
+   valCoderTick(valcoderUp, valcoderDown);
 }
 
 void loop()
