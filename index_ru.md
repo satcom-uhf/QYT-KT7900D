@@ -4,4 +4,7 @@ Qyt KT7900D маленькое дешевое и простое радио. От
 
 ![Image](https://images-eu.ssl-images-amazon.com/images/I/51PG%2BekxZGL.jpg)
 
+## [Крякнутый софт](https://github.com/satcom-uhf/QYT-KT7900D/releases/tag/Software)
+
+
 ## [Адаптер для удаленного управления](RemoteControl/README_RU.md)
