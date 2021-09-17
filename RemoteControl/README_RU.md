@@ -10,13 +10,16 @@
 Данного набора команд достаточно чтобы программно изменить большинство настроек станции или выбрать нужный канал (каналы)
 
 ### Компоненты
+
 - [Arduino Nano](https://docs.arduino.cc/hardware/nano)
 - [PC817 x 4](https://www.farnell.com/datasheets/73758.pdf)
 - 4 резистора (220 Ом)
 - тонкие провода
 - разьем 7 или 8 пинов
 - макетная плата
-### Инструменты:
+
+### Инструменты
+
 - Паяльник =)
 - [Fritzing](https://github.com/fritzing/fritzing-app/releases) чтобы посмотреть файл схемы (RemoteControl.fzz)
 - [Arduino IDE](https://www.arduino.cc/en/software) чтобы скомпилировать и загрузить скетч (RemoteControl.ino) в Arduino

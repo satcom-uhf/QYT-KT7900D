@@ -15,7 +15,9 @@ This command set is enough to change the most of settings and select any channel
 - wires
 - connector (7 or 8 pins)
 - bread board
-### Tools required:
+  
+### Tools required
+
 - Soldering iron =)
 - [Fritzing](https://github.com/fritzing/fritzing-app/releases) to view/edit the scheme (RemoteControl.fzz)
 - [Arduino IDE](https://www.arduino.cc/en/software) to compile/upload sketch (RemoteControl.ino) to your Arduino board
