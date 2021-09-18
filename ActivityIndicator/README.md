@@ -22,7 +22,7 @@ Unmount PTT front panel and drill a hole for LED
 
 ## Step 2
 
-Look for a hidden cut wire for the second pin of RJ45
+Look for a hidden cut wire from the second pin of RJ45
 
 ![hidden](HiddenWire.jpg)
 
