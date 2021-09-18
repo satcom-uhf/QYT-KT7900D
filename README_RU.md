@@ -1,4 +1,4 @@
-# QYT KT7900D ([EN](index.md))
+# QYT KT7900D ([EN](README.md))
 
 Qyt KT7900D маленькое дешевое и простое радио. Отличный вариант для начинающих.
 
@@ -6,5 +6,6 @@ Qyt KT7900D маленькое дешевое и простое радио. От
 
 ## [Крякнутый софт](https://github.com/satcom-uhf/QYT-KT7900D/releases/tag/Software)
 
+## [Каналы 72E](https://github.com/satcom-uhf/QYT-KT7900D/releases/tag/Channels72E)
 
 ## [Адаптер для удаленного управления](RemoteControl/README_RU.md)
