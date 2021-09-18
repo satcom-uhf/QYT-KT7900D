@@ -1,4 +1,4 @@
-# Activity indicator
+# Activity indicator ([RU](README.md))
 
 It's just a LED indicates squelch state. Just use signal from pin 2 and invert it:
 
@@ -35,8 +35,6 @@ Make it longer
 ## Step 4
 
 Mount components
-
-![Schema](Diagram.png)
 
 ![components](MountComponents.jpg)
 
