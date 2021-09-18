@@ -9,4 +9,4 @@ Qyt KT7900D is very tiny and cheap radio. Recommended for beginners.
 ## [IOR channels](https://github.com/satcom-uhf/QYT-KT7900D/releases/tag/Channels72E)
 ## [Remote control adapter](RemoteControl/README.md)
 
-
+## [Activity indicator](ActivityIndicator/README.md)
