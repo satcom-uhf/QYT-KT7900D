@@ -6,15 +6,19 @@ The remote control adapter allows pressing buttons on the front panel programmat
 - ```-``` is equal to "Down"
 - ```e``` is equal to "Exit/ABCD"
 - ```m``` is equal to "Menu"
+- ```t``` enables PTT (be careful!)
+- ```s``` disables PTT
 
 This command set is enough to change the most of settings and select any channels.
 ### Components required
 - [Arduino Nano](https://docs.arduino.cc/hardware/nano)
 - [PC817 x 4](https://www.farnell.com/datasheets/73758.pdf)
 - 4 resistors (220 Ohms)
+- 1 resistor 1K
 - wires
 - connector (7 or 8 pins)
 - bread board
+- RJ45 connector
   
 ### Tools required
 

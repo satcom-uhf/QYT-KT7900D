@@ -1,15 +1,32 @@
-int valcoderUp = 12;
-int valcoderDown = 10;
-int menu = 8;
-int abcd = 6;
+#define VALCODER_UP 12
+#define VALCODER_DOWN 10
+#define MENU 8
+#define ABCD 6
+#define PTT 9
+#define SQUELCH_OPEN 3
 bool valcoderState = false;
 void setup(void)
 {
+   pinMode(PTT, OUTPUT);
+   digitalWrite(PTT, LOW);
+   pinMode(VALCODER_UP, OUTPUT);
+   pinMode(VALCODER_DOWN, OUTPUT);
+   pinMode(MENU, OUTPUT);
+   pinMode(ABCD, OUTPUT);
    Serial.begin(9600);
-   pinMode(valcoderUp, OUTPUT);
-   pinMode(valcoderDown, OUTPUT);
-   pinMode(menu, OUTPUT);
-   pinMode(abcd, OUTPUT);
+   pinMode(SQUELCH_OPEN, INPUT);
+   attachInterrupt(digitalPinToInterrupt(SQUELCH_OPEN), monitorActivity, CHANGE);
+}
+
+void monitorActivity(){
+  if (digitalRead(SQUELCH_OPEN)==LOW){
+    digitalWrite(LED_BUILTIN, HIGH);
+    Serial.println("activity");
+  }
+  else{
+    digitalWrite(LED_BUILTIN, LOW);
+    Serial.println("silence");  
+  }
 }
 
 void clickButton(int pin)
@@ -23,17 +40,17 @@ void valCoderTick(int pin1, int pin2)
 {
    valcoderState = !valcoderState;
    digitalWrite(pin1, valcoderState);
-   delay(3);
+   delay(5);
    digitalWrite(pin2, valcoderState);
 }
 
 void up()
 {   
-   valCoderTick(valcoderDown, valcoderUp);
+   valCoderTick(VALCODER_DOWN, VALCODER_UP);
 }
 void down()
 {
-   valCoderTick(valcoderUp, valcoderDown);
+   valCoderTick(VALCODER_UP, VALCODER_DOWN);
 }
 
 void loop()
@@ -54,13 +71,21 @@ void loop()
          Serial.println("Down");
          break;
       case 'e':
-         clickButton(abcd);
+         clickButton(ABCD);
          Serial.println("ABCD");
          break;
       case 'm':
-         clickButton(menu);
+         clickButton(MENU);
          Serial.println("MENU");
          break;
+      case 't':
+        digitalWrite(PTT, HIGH);
+        Serial.println("PTT");
+        break;
+      case 's':
+        digitalWrite(PTT, LOW);
+        Serial.println("PTTSTOP");
+        break;
       }
    }
 }
