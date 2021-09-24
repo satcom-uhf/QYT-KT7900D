@@ -3,16 +3,28 @@
 #define MENU 8
 #define ABCD 6
 #define PTT 9
+#define SQUELCH_OPEN 7
 bool valcoderState = false;
 void setup(void)
 {
-   Serial.begin(9600);
+   pinMode(PTT, OUTPUT);
+   digitalWrite(PTT, LOW);
    pinMode(VALCODER_UP, OUTPUT);
    pinMode(VALCODER_DOWN, OUTPUT);
    pinMode(MENU, OUTPUT);
    pinMode(ABCD, OUTPUT);
-   pinMode(PTT, OUTPUT);
-   digitalWrite(PTT, LOW);
+   Serial.begin(9600);
+   pinMode(SQUELCH_OPEN, INPUT);
+   attachInterrupt(digitalPinToInterrupt(SQUELCH_OPEN), monitorActivity, CHANGE);
+}
+
+void monitorActivity(){
+  if (digitalRead(SQUELCH_OPEN)==LOW){
+    Serial.println("activity");
+  }
+  else{
+    Serial.println("silence");  
+  }
 }
 
 void clickButton(int pin)
@@ -26,7 +38,7 @@ void valCoderTick(int pin1, int pin2)
 {
    valcoderState = !valcoderState;
    digitalWrite(pin1, valcoderState);
-   delay(3);
+   delay(5);
    digitalWrite(pin2, valcoderState);
 }
 
