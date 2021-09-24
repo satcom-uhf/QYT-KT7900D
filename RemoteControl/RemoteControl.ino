@@ -3,7 +3,7 @@
 #define MENU 8
 #define ABCD 6
 #define PTT 9
-#define SQUELCH_OPEN 7
+#define SQUELCH_OPEN 3
 bool valcoderState = false;
 void setup(void)
 {
@@ -20,9 +20,11 @@ void setup(void)
 
 void monitorActivity(){
   if (digitalRead(SQUELCH_OPEN)==LOW){
+    digitalWrite(LED_BUILTIN, HIGH);
     Serial.println("activity");
   }
   else{
+    digitalWrite(LED_BUILTIN, LOW);
     Serial.println("silence");  
   }
 }
