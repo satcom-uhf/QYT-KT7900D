@@ -13,12 +13,13 @@ This command set is enough to change the most of settings and select any channel
 ### Components required
 - [Arduino Nano](https://docs.arduino.cc/hardware/nano)
 - [PC817 x 4](https://www.farnell.com/datasheets/73758.pdf)
-- 4 resistors (220 Ohms)
-- 1 resistor 1K
+- 4 resistors 220 Ohms
+- 3 resistors 1K
 - wires
 - connector (7 or 8 pins)
 - bread board
 - RJ45 connector
+- any small MOSFET
   
 ### Tools required
 
