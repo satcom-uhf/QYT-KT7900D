@@ -4,7 +4,9 @@
 #define ABCD 6
 #define PTT 9
 #define SQUELCH_OPEN 3
+#define EXTERNAL_PTT 7
 bool valcoderState = false;
+bool extPttState = false;
 void setup(void)
 {
    pinMode(PTT, OUTPUT);
@@ -15,24 +17,28 @@ void setup(void)
    pinMode(ABCD, OUTPUT);
    Serial.begin(9600);
    pinMode(SQUELCH_OPEN, INPUT);
+   pinMode(EXTERNAL_PTT, INPUT);
    attachInterrupt(digitalPinToInterrupt(SQUELCH_OPEN), monitorActivity, CHANGE);
 }
 
-void monitorActivity(){
-  if (digitalRead(SQUELCH_OPEN)==LOW){
-    digitalWrite(LED_BUILTIN, HIGH);
-    Serial.println("activity");
-  }
-  else{
-    digitalWrite(LED_BUILTIN, LOW);
-    Serial.println("silence");  
-  }
+void monitorActivity()
+{
+   if (digitalRead(SQUELCH_OPEN) == LOW)
+   {
+      digitalWrite(LED_BUILTIN, HIGH);
+      Serial.println("activity");
+   }
+   else
+   {
+      digitalWrite(LED_BUILTIN, LOW);
+      Serial.println("silence");
+   }
 }
 
 void clickButton(int pin)
 {
    digitalWrite(pin, HIGH);
-   delay(10);
+   delay(15);
    digitalWrite(pin, LOW);
 }
 
@@ -45,7 +51,7 @@ void valCoderTick(int pin1, int pin2)
 }
 
 void up()
-{   
+{
    valCoderTick(VALCODER_DOWN, VALCODER_UP);
 }
 void down()
@@ -53,9 +59,34 @@ void down()
    valCoderTick(VALCODER_UP, VALCODER_DOWN);
 }
 
+void ptt()
+{
+   digitalWrite(PTT, HIGH);
+   Serial.println("PTT");
+}
+void stopPtt()
+{
+
+   digitalWrite(PTT, LOW);
+   Serial.println("PTTSTOP");
+}
+
 void loop()
 {
    byte ch;
+   bool extPtt = digitalRead(EXTERNAL_PTT);
+   if (extPtt != extPttState)
+   {
+      extPttState = extPtt;
+      if (extPtt)
+      {
+         ptt();
+      }
+      else
+      {
+         stopPtt();
+      }
+   }
 
    if (Serial.available())
    {
@@ -79,13 +110,11 @@ void loop()
          Serial.println("MENU");
          break;
       case 't':
-        digitalWrite(PTT, HIGH);
-        Serial.println("PTT");
-        break;
+         ptt();
+         break;
       case 's':
-        digitalWrite(PTT, LOW);
-        Serial.println("PTTSTOP");
-        break;
+         stopPtt();
+         break;
       }
    }
 }
