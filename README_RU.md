@@ -11,3 +11,5 @@ Qyt KT7900D маленькое дешевое и простое радио. От
 ## [Адаптер для удаленного управления](RemoteControl/README_RU.md)
 
 ## [Индикатор активности](ActivityIndicator/README_RU.md)
+
+## [Пакетное радио на коленке](PacketRadio/Quickstart_RU.md)
