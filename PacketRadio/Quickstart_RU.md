@@ -1,8 +1,7 @@
 # [Пакетное радио](https://etnowiki.ru/wiki/Packet_radio) на коленке
 
 
-https://github.com/satcom-uhf/QYT-KT7900D/assets/90838159/01b05537-150c-46a9-a750-b3de58aedcb6
-
+<video src="https://user-images.githubusercontent.com/90838159/282679990-01b05537-150c-46a9-a750-b3de58aedcb6.mp4" data-canonical-src="https://user-images.githubusercontent.com/90838159/282679990-01b05537-150c-46a9-a750-b3de58aedcb6.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
 
 В данной статье мы рассмотрим как организовать пакетную связь доступными средствами. Для приема и передачи сигнала будет использован трансивер Qyt KT-7900D. Преобразовывать текст в звуковой сигнал и обратно будет компьютер под управлением Windows.
 
