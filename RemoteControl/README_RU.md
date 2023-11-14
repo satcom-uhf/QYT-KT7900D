@@ -26,8 +26,8 @@
 ### Инструменты
 
 - Паяльник =)
-- [Fritzing](https://github.com/fritzing/fritzing-app/releases) чтобы посмотреть файл схемы (RemoteControl.fzz)
-- [Arduino IDE](https://www.arduino.cc/en/software) чтобы скомпилировать и загрузить скетч (RemoteControl.ino) в Arduino
+- [Fritzing](https://github.com/fritzing/fritzing-app/releases) чтобы посмотреть файл схемы ![RemoteControl.fzz](RemoteControl.fzz)
+- [Arduino IDE](https://www.arduino.cc/en/software) чтобы скомпилировать и загрузить скетч ![RemoteControl.ino](RemoteControl.ino) в Arduino
 
 ## Схема
 ![Scheme](Scheme.png)
@@ -36,7 +36,7 @@
 ![Board1](BreadBoard1.png)
 ![Board2](BreadBoard2.png)
 
-### Шаг 2. Откройте прошивку  RemoteControl.ino с помощью Arduino IDE и загрузите ее в Arduino Nano
+### Шаг 2. Откройте прошивку  ![RemoteControl.ino](RemoteControl.ino) с помощью Arduino IDE и загрузите ее в Arduino Nano
 ### Шаг 3. Снимите переднюю панель и подключите провода к указанным точкам
 
 ![ConnectionPoints](FrontPanelPoints.png)
